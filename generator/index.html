@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Генератор паролей | Проект Глеба</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600;700;800&family=JetBrains+Mono:wght@500;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+  <div class="container">
+    <a href="../index.html" class="back-link">
+      <svg viewBox="0 0 24 24" width="20" height="20" fill="currentColor">
+        <path d="M20 11H7.83l5.59-5.59L12 4l-8 8 8 8 1.41-1.41L7.83 13H20v-2z"/>
+      </svg>
+      Вернуться в портфолио
+    </a>
+
+    <div class="generator-card">
+      <h1 class="title">Генератор паролей</h1>
+      <p class="subtitle">Создавайте надежные и взломостойкие пароли в один клик</p>
+
+      <!-- Поле с готовым паролем -->
+      <div class="output-group">
+        <input type="text" id="passwordOutput" readonly placeholder="Нажмите «Сгенерировать»">
+        <button id="copyBtn" class="copy-btn" title="Скопировать">
+          <svg viewBox="0 0 24 24" width="22" height="22" fill="currentColor">
+            <path d="M16 1H4c-1.1 0-2 .9-2 2v14h2V3h12V1zm3 4H8c-1.1 0-2 .9-2 2v14c0 1.1.9 2 2 2h11c1.1 0 2-.9 2-2V7c0-1.1-.9-2-2-2zm0 16H8V7h11v14z"/>
+          </svg>
+        </button>
+      </div>
+
+      <!-- Индикатор сложности -->
+      <div class="strength-meter">
+        <div class="strength-bar" id="strengthBar"></div>
+      </div>
+      <div class="strength-text" id="strengthText">Сложность: —</div>
+
+      <!-- Настройки генерации -->
+      <div class="settings">
+        <div class="setting-item">
+          <div class="length-header">
+            <label for="lengthSlider">Длина пароля:</label>
+            <span id="lengthValue">16</span>
+          </div>
+          <input type="range" id="lengthSlider" min="6" max="32" value="16">
+        </div>
+
+        <div class="checkbox-group">
+          <label class="custom-checkbox">
+            <input type="checkbox" id="uppercase" checked>
+            <span class="checkmark"></span>
+            Заглавные буквы (A-Z)
+          </label>
+
+          <label class="custom-checkbox">
+            <input type="checkbox" id="lowercase" checked>
+            <span class="checkmark"></span>
+            Строчные буквы (a-z)
+          </label>
+
+          <label class="custom-checkbox">
+            <input type="checkbox" id="numbers" checked>
+            <span class="checkmark"></span>
+            Цифры (0-9)
+          </label>
+
+          <label class="custom-checkbox">
+            <input type="checkbox" id="symbols" checked>
+            <span class="checkmark"></span>
+            Спецсимволы (!@#$%^&*)
+          </label>
+        </div>
+      </div>
+
+      <!-- Кнопка действия -->
+      <button id="generateBtn" class="btn-generate">
+        Сгенерировать пароль
+      </button>
+
+      <!-- Всплывающее уведомление о копировании -->
+      <div id="toast" class="toast">Пароль скопирован в буфер!</div>
+    </div>
+  </div>
+
+  <script src="script.js"></script>
+</body>
+</html>
