@@ -1,36 +1,51 @@
-// 1. Логика копирования Telegram
+// 1. Копирование Telegram
 const copyBtn = document.getElementById('copy-btn');
 const tgLink = document.getElementById('tg-link');
 
 if (copyBtn && tgLink) {
     copyBtn.addEventListener('click', () => {
         const textToCopy = tgLink.innerText;
-        navigator.clipboard.writeText(textToCopy).then(() => {
-            copyBtn.innerText = '✅';
-            copyBtn.classList.add('copied');
-            
-            setTimeout(() => {
-                copyBtn.innerText = '📋';
-                copyBtn.classList.remove('copied');
-            }, 2000);
-        }).catch(err => {
-            console.error('Ошибка копирования: ', err);
-        });
+        
+        // Используем fallback, если clipboard API недоступен (например, на старых телефонах)
+        if (navigator.clipboard) {
+            navigator.clipboard.writeText(textToCopy).then(() => {
+                showCopySuccess();
+            }).catch(err => {
+                console.error('Ошибка копирования: ', err);
+            });
+        } else {
+            // Старый метод
+            const textArea = document.createElement("textarea");
+            textArea.value = textToCopy;
+            document.body.appendChild(textArea);
+            textArea.select();
+            document.execCommand('copy');
+            document.body.removeChild(textArea);
+            showCopySuccess();
+        }
     });
 }
 
-// 2. Эффект изменения шапки при прокрутке
+function showCopySuccess() {
+    copyBtn.innerText = '✅';
+    copyBtn.classList.add('copied');
+    setTimeout(() => {
+        copyBtn.innerText = '📋';
+        copyBtn.classList.remove('copied');
+    }, 2000);
+}
+
+// 2. Тень шапки при скролле
 const header = document.getElementById('header');
 window.addEventListener('scroll', () => {
     if (window.scrollY > 50) {
         header.style.boxShadow = '0 5px 20px rgba(0,0,0,0.1)';
     } else {
-        header.style.boxShadow = '0 2px 10px rgba(0,0,0,0.05)';
+        header.style.boxShadow = '0 2px 15px rgba(0,0,0,0.05)';
     }
 });
 
-// 3. Плавное появление (Intersection Observer)
-// Мы добавили этот класс через JS, чтобы он не ломал отображение, если скрипт не загрузится
+// 3. Красивое появление блоков при скролле
 const sections = document.querySelectorAll('.section');
 
 const observerOptions = {

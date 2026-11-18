@@ -1,138 +1,360 @@
-html {
-    scroll-behavior: smooth;
+/* Базовые переменные */
+:root {
+    --bg-color: #f4f7f6;
+    --text-color: #2d3436;
+    --primary-color: #0077ff;
+    --card-bg: #ffffff;
+    --header-bg: rgba(255, 255, 255, 0.95);
+    --shadow: 0 10px 30px rgba(0,0,0,0.06);
 }
 
 * {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
+    font-family: 'Montserrat', sans-serif;
+}
+
+html {
+    scroll-behavior: smooth;
 }
 
 body {
-    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; /* Более современный шрифт */
-    background: #f0f2f5;
-    color: #333;
-    line-height: 1.6;
+    background-color: var(--bg-color);
+    color: var(--text-color);
+    line-height: 1.7;
+    overflow-x: hidden;
 }
 
+.container {
+    max-width: 1100px;
+    margin: 0 auto;
+    padding: 0 20px;
+}
+
+/* Шапка */
 header {
+    position: fixed;
+    top: 0;
+    width: 100%;
+    background: var(--header-bg);
+    backdrop-filter: blur(10px);
+    z-index: 1000;
+    box-shadow: 0 2px 15px rgba(0,0,0,0.05);
+    transition: all 0.3s ease;
+}
+
+.header-container {
     display: flex;
     justify-content: space-between;
     align-items: center;
-    padding: 20px 40px;
-    background: #1a1a2e;
-    color: white;
-    position: sticky;
-    top: 0;
-    z-index: 100;
-    box-shadow: 0 2px 10px rgba(0,0,0,0.2);
+    height: 70px;
 }
 
 .logo {
     font-size: 24px;
-    font-weight: bold;
-    color: #4fc3f7;
+    font-weight: 800;
+    color: #2d3436;
+}
+
+.logo span {
+    color: var(--primary-color);
 }
 
 nav a {
-    color: white;
     text-decoration: none;
-    margin-left: 24px;
-    font-size: 16px;
-    font-weight: 500;
-    transition: color 0.3s ease;
+    color: #636e72;
+    margin-left: 25px;
+    font-weight: 600;
+    transition: color 0.3s;
 }
 
 nav a:hover {
-    color: #4fc3f7;
+    color: var(--primary-color);
 }
 
-main {
-    max-width: 800px;
-    margin: 40px auto;
-    padding: 0 20px;
-}
-
-/* Стили для блока с аватаркой */
+/* Главный экран */
 .hero {
+    min-height: 100vh;
     display: flex;
     align-items: center;
-    gap: 30px;
-    margin-bottom: 40px;
-    background: white;
-    padding: 30px;
-    border-radius: 15px;
-    box-shadow: 0 4px 15px rgba(0,0,0,0.05);
+    padding-top: 70px;
+    background: linear-gradient(135deg, #ffffff 0%, #f4f7f6 100%);
 }
 
-.avatar {
-    width: 120px;
-    height: 120px;
-    border-radius: 50%;
-    object-fit: cover;
-    border: 4px solid #4fc3f7;
-    box-shadow: 0 4px 10px rgba(79, 195, 247, 0.4);
+.hero-content {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 40px;
+    width: 100%;
+}
+
+.hero-text {
+    flex: 1;
 }
 
 .hero-text h1 {
-    font-size: 36px;
-    margin-bottom: 10px;
-    color: #1a1a2e;
+    font-size: 54px;
+    font-weight: 800;
+    line-height: 1.2;
+    margin-bottom: 20px;
+}
+
+.hero-text .highlight {
+    color: var(--primary-color);
 }
 
 .hero-text p {
-    font-size: 18px;
-    color: #666;
-}
-
-/* Стили для карточек */
-.card {
-    background: white;
-    padding: 30px;
-    border-radius: 15px;
+    font-size: 20px;
+    color: #636e72;
     margin-bottom: 30px;
-    box-shadow: 0 4px 15px rgba(0,0,0,0.05);
-    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    max-width: 500px;
 }
 
-.card:hover {
-    transform: translateY(-5px); /* Карточка чуть приподнимается при наведении */
-    box-shadow: 0 8px 25px rgba(0,0,0,0.1);
-}
-
-.card h2 {
-    font-size: 26px;
-    margin-bottom: 15px;
-    color: #1a1a2e;
-    border-bottom: 3px solid #4fc3f7;
+.btn {
     display: inline-block;
-    padding-bottom: 5px;
+    padding: 15px 35px;
+    background: var(--primary-color);
+    color: white;
+    text-decoration: none;
+    border-radius: 50px;
+    font-weight: 600;
+    font-size: 16px;
+    transition: transform 0.3s, box-shadow 0.3s;
+    box-shadow: 0 8px 25px rgba(0, 119, 255, 0.3);
+}
+
+.btn:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 12px 30px rgba(0, 119, 255, 0.4);
+}
+
+.avatar-placeholder {
+    width: 320px;
+    height: 320px;
+    background: linear-gradient(135deg, var(--primary-color), #00d2ff);
+    border-radius: 30% 70% 70% 30% / 30% 30% 70% 70%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 140px;
+    color: white;
+    font-weight: 800;
+    box-shadow: 0 25px 50px rgba(0, 119, 255, 0.25);
+    animation: morph 8s ease-in-out infinite;
+    flex-shrink: 0;
+}
+
+@keyframes morph {
+    0% { border-radius: 30% 70% 70% 30% / 30% 30% 70% 70%; }
+    50% { border-radius: 70% 30% 30% 70% / 70% 70% 30% 30%; }
+    100% { border-radius: 30% 70% 70% 30% / 30% 30% 70% 70%; }
+}
+
+/* Секции */
+.section {
+    padding: 100px 0;
+}
+
+.section-title {
+    font-size: 36px;
+    font-weight: 800;
+    margin-bottom: 50px;
+    text-align: center;
+    position: relative;
+}
+
+.section-title::after {
+    content: '';
+    display: block;
+    width: 70px;
+    height: 5px;
+    background: var(--primary-color);
+    margin: 15px auto 0;
+    border-radius: 3px;
+}
+
+.card {
+    background: var(--card-bg);
+    padding: 40px;
+    border-radius: 25px;
+    box-shadow: var(--shadow);
 }
 
 .card p {
-    font-size: 17px;
-    color: #555;
-    margin-bottom: 10px;
+    font-size: 18px;
+    color: #4a5568;
+    margin-bottom: 15px;
 }
 
-.card a {
-    color: #1a73e8;
+/* Проекты */
+.projects-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 30px;
+}
+
+.project-card {
+    background: var(--card-bg);
+    padding: 35px;
+    border-radius: 25px;
+    box-shadow: var(--shadow);
+    transition: transform 0.3s, box-shadow 0.3s;
+    display: flex;
+    flex-direction: column;
+}
+
+.project-card:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 20px 40px rgba(0,0,0,0.1);
+}
+
+.project-card h3 {
+    font-size: 24px;
+    margin-bottom: 15px;
+    color: #2d3436;
+}
+
+.project-card p {
+    color: #636e72;
+    flex-grow: 1;
+    margin-bottom: 25px;
+}
+
+.tag {
+    align-self: flex-start;
+    background: rgba(0, 119, 255, 0.1);
+    color: var(--primary-color);
+    padding: 8px 16px;
+    border-radius: 20px;
+    font-size: 14px;
+    font-weight: 700;
+}
+
+/* Контакты */
+.contact-links {
+    margin-top: 25px;
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+
+.contact-item {
+    font-size: 18px;
+    display: flex;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 10px;
+}
+
+.contact-item span {
+    font-weight: 600;
+    color: #2d3436;
+}
+
+.contact-item a {
+    color: var(--primary-color);
     text-decoration: none;
-    font-weight: 500;
+    font-weight: 700;
 }
 
-.card a:hover {
+.contact-item a:hover {
     text-decoration: underline;
 }
 
-/* Адаптивность для телефонов */
-@media (max-width: 600px) {
-    .hero {
+.copy-btn {
+    background: #f4f7f6;
+    border: none;
+    border-radius: 10px;
+    padding: 10px 15px;
+    cursor: pointer;
+    font-size: 18px;
+    transition: all 0.3s;
+}
+
+.copy-btn:hover {
+    background: #e2e8f0;
+}
+
+.copy-btn.copied {
+    background: #22c55e;
+    color: white;
+}
+
+/* Подвал */
+footer {
+    text-align: center;
+    padding: 40px 20px;
+    background: #1a202c;
+    color: #a0aec0;
+    margin-top: 50px;
+    font-size: 16px;
+}
+
+/* Анимации при прокрутке */
+.reveal {
+    opacity: 0;
+    transform: translateY(40px);
+    transition: all 0.8s cubic-bezier(0.5, 0, 0, 1);
+}
+
+.reveal.active {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+/* =========================================
+   АДАПТИВНОСТЬ ДЛЯ ТЕЛЕФОНОВ (чтоб было красиво)
+   ========================================= */
+@media (max-width: 900px) {
+    .hero-content {
         flex-direction: column;
         text-align: center;
+        padding-top: 100px;
     }
-    header {
+    .hero-text h1 { font-size: 42px; }
+    .hero-text p { margin: 0 auto 30px; }
+    .avatar-placeholder {
+        width: 250px;
+        height: 250px;
+        font-size: 100px;
+        margin-top: 30px;
+    }
+}
+
+@media (max-width: 600px) {
+    /* На мобильных делаем отступы меньше */
+    .hero { padding-top: 90px; min-height: auto; padding-bottom: 60px; }
+    .hero-text h1 { font-size: 34px; }
+    .hero-text p { font-size: 16px; }
+    .avatar-placeholder {
+        width: 200px;
+        height: 200px;
+        font-size: 80px;
+    }
+    
+    /* Скрываем меню в шапке, чтобы не мешало (для простоты) */
+    nav { display: none; }
+    
+    .section { padding: 60px 0; }
+    .section-title { font-size: 28px; margin-bottom: 30px; }
+    
+    .card { padding: 25px; }
+    .card p { font-size: 16px; }
+    
+    .project-card { padding: 25px; }
+    .project-card h3 { font-size: 20px; }
+    
+    /* Контакты выстраиваем в столбик для удобства */
+    .contact-item {
         flex-direction: column;
-        gap: 15px;
+        align-items: flex-start;
+        gap: 5px;
+        font-size: 16px;
+    }
+    .copy-btn {
+        margin-top: 10px;
+        width: 100%;
     }
 }

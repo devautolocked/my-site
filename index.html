@@ -3,12 +3,16 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Глеб — Начинающий веб-разработчик</title>
+    <title>Глеб — Веб-разработчик</title>
+    <!-- Подключаем современный шрифт Montserrat -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600;800&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="style.css">
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;800&display=swap" rel="stylesheet">
 </head>
 <body>
 
+    <!-- Шапка -->
     <header id="header">
         <div class="container header-container">
             <div class="logo">gleb<span>.dev</span></div>
@@ -20,21 +24,25 @@
         </div>
     </header>
 
+    <!-- Главный экран -->
     <section class="hero">
         <div class="container hero-content">
             <div class="hero-text">
                 <h1>Привет, я <span class="highlight">Глеб</span></h1>
-                <p>Создаю современные и удобные сайты. Учусь веб-разработке и готов помочь с вашим проектом.</p>
-                <a href="#contacts" class="btn">Связаться со мной</a>
+                <p>Создаю современные, быстрые и удобные сайты. Изучаю веб-разработку и готов помочь с вашим проектом.</p>
+                <a href="#contacts" class="btn">Написать мне</a>
             </div>
             <div class="hero-image">
+                <!-- Красивая аватарка-градиент -->
                 <div class="avatar-placeholder">G</div>
             </div>
         </div>
     </section>
 
+    <!-- Основной контент -->
     <main class="container">
         
+        <!-- Обо мне -->
         <section id="about" class="section">
             <h2 class="section-title">Обо мне</h2>
             <div class="card">
@@ -43,33 +51,37 @@
             </div>
         </section>
 
+        <!-- Проекты -->
         <section id="projects" class="section">
             <h2 class="section-title">Мои проекты</h2>
             <div class="projects-grid">
                 <div class="project-card">
                     <h3>Сайт-визитка</h3>
-                    <p>Мой первый проект. Создан для демонстрации навыков верстки и работы с JavaScript.</p>
+                    <p>Мой первый проект. Создан для демонстрации навыков верстки, адаптивности и работы с JavaScript.</p>
                     <span class="tag">HTML/CSS/JS</span>
                 </div>
                 <div class="project-card">
                     <h3>Второй проект</h3>
-                    <p>Скоро здесь появится калькулятор или игра. Сейчас я активно учусь и работаю над этим.</p>
+                    <p>Скоро здесь появится калькулятор или интерактивная игра. Сейчас я активно учусь и работаю над этим.</p>
                     <span class="tag">В разработке</span>
                 </div>
             </div>
         </section>
 
+        <!-- Контакты -->
         <section id="contacts" class="section">
             <h2 class="section-title">Контакты</h2>
             <div class="card contact-card">
                 <p>Хотите заказать сайт или задать вопрос? Напишите мне!</p>
                 <div class="contact-links">
                     <div class="contact-item">
-                        <span>Telegram:</span> <a href="https://t.me/autolocked" id="tg-link" target="_blank">@autolocked</a>
+                        <span>Telegram:</span> 
+                        <a href="https://t.me/autolocked" id="tg-link" target="_blank">@autolocked</a>
                         <button id="copy-btn" class="copy-btn" title="Скопировать ник">📋</button>
                     </div>
                     <div class="contact-item">
-                        <span>Email:</span> <a href="mailto:dev.autolocked@gmail.com">dev.autolocked@gmail.com</a>
+                        <span>Email:</span> 
+                        <a href="mailto:dev.autolocked@gmail.com">dev.autolocked@gmail.com</a>
                     </div>
                 </div>
             </div>
@@ -77,9 +89,10 @@
 
     </main>
 
+    <!-- Подвал -->
     <footer>
         <div class="container">
-            <p>&copy; 2026 Глеб. Сделано с нуля на чистом коде.</p>
+            <p>Создано с душой и чистым кодом © 2026 Глеб</p>
         </div>
     </footer>
 
