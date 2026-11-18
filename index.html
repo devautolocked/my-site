@@ -6,189 +6,235 @@
     <title>Глеб | Frontend-разработчик</title>
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600;800&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="style.css?v=4">
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700;800&family=JetBrains+Mono:wght@500;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="style.css?v=5">
 </head>
 <body>
 
-    <!-- Шапка сайта -->
-    <header>
+    <!-- ШАПКА САЙТА -->
+    <header id="header">
         <div class="container header-container">
-            <a href="#" class="logo">autolocked<span>.dev</span></a>
-            <div class="header-right">
-                <nav>
-                    <a href="#about">Обо мне</a>
-                    <a href="#skills">Навыки</a>
-                    <a href="#projects">Проекты</a>
-                    <a href="#contacts">Контакты</a>
-                </nav>
-                <button id="theme-toggle" class="theme-btn" title="Сменить тему">
-                    <!-- Иконка луны (для темной темы) -->
-                    <svg id="moon-icon" viewBox="0 0 24 24" width="22" height="22" fill="currentColor">
-                        <path d="M12.3 2a10 10 0 0 0-.19 20 10 10 0 0 0 8.7-5.11 8.5 8.5 0 0 1-8.51-14.89z"/>
-                    </svg>
-                    <!-- Иконка солнца (для светлой темы) -->
-                    <svg id="sun-icon" viewBox="0 0 24 24" width="22" height="22" fill="currentColor" style="display: none;">
-                        <path d="M12 7c-2.76 0-5 2.24-5 5s2.24 5 5 5 5-2.24 5-5-2.24-5-5-5zM2 13h2c.55 0 1-.45 1-1s-.45-1-1-1H2c-.55 0-1 .45-1 1s.45 1 1 1zm18 0h2c.55 0 1-.45 1-1s-.45-1-1-1h-2c-.55 0-1 .45-1 1s.45 1 1 1zM11 2v2c0 .55.45 1 1 1s1-.45 1-1V2c0-.55-.45-1-1-1s-1 .45-1 1zm0 18v2c0 .55.45 1 1 1s1-.45 1-1v-2c0-.55-.45-1-1-1s-1 .45-1 1zM5.99 4.58c-.39-.39-1.03-.39-1.41 0s-.39 1.03 0 1.41l1.06 1.06c.39.39 1.03.39 1.41 0s.39-1.03 0-1.41L5.99 4.58zm12.37 12.37c-.39-.39-1.03-.39-1.41 0s-.39 1.03 0 1.41l1.06 1.06c.39.39 1.03.39 1.41 0s.39-1.03 0-1.41l-1.06-1.06zm1.06-10.96c.39-.39.39-1.03 0-1.41s-1.03-.39-1.41 0l-1.06 1.06c-.39.39-.39 1.03 0 1.41s1.03.39 1.41 0l1.06-1.06zM7.05 18.36c.39-.39.39-1.03 0-1.41s-1.03-.39-1.41 0l-1.06 1.06c-.39.39-.39 1.03 0 1.41s1.03.39 1.41 0l1.06-1.06z"/>
-                    </svg>
-                </button>
-            </div>
+            <a href="#" class="logo">Глеб<span>.dev</span></a>
+            
+            <nav class="nav-menu">
+                <a href="#about" class="nav-link">Обо мне</a>
+                <a href="#skills" class="nav-link">Навыки</a>
+                <a href="#projects" class="nav-link">Проекты</a>
+                <a href="#contacts" class="nav-link">Контакты</a>
+            </nav>
+
+            <button id="theme-toggle" class="theme-btn" title="Переключить тему" aria-label="Переключить тему">
+                <svg id="moon-icon" viewBox="0 0 24 24" width="22" height="22" fill="currentColor">
+                    <path d="M12 3a9 9 0 1 0 9 9c0-.46-.04-.92-.1-1.36a5.389 5.389 0 0 1-4.4 2.26 5.403 5.403 0 0 1-3.14-9.8c-.44-.06-.9-.1-1.36-.1z"/>
+                </svg>
+                <svg id="sun-icon" viewBox="0 0 24 24" width="22" height="22" fill="currentColor" style="display: none;">
+                    <path d="M12 7c-2.76 0-5 2.24-5 5s2.24 5 5 5 5-2.24 5-5-2.24-5-5-5zM2 13h2c.55 0 1-.45 1-1s-.45-1-1-1H2c-.55 0-1 .45-1 1s.45 1 1 1zm18 0h2c.55 0 1-.45 1-1s-.45-1-1-1h-2c-.55 0-1 .45-1 1s.45 1 1 1zM11 2v2c0 .55.45 1 1 1s1-.45 1-1V2c0-.55-.45-1-1-1s-1 .45-1 1zm0 18v2c0 .55.45 1 1 1s1-.45 1-1v-2c0-.55-.45-1-1-1s-1 .45-1 1zM5.99 4.58a.996.996 0 0 0-1.41 0 .996.996 0 0 0 0 1.41l1.06 1.06c.39.39 1.03.39 1.41 0s.39-1.03 0-1.41L5.99 4.58zm12.37 12.37a.996.996 0 0 0-1.41 0 .996.996 0 0 0 0 1.41l1.06 1.06c.39.39 1.03.39 1.41 0a.996.996 0 0 0 0-1.41l-1.06-1.06zm1.06-10.96a.996.996 0 0 0 0-1.41.996.996 0 0 0-1.41 0l-1.06 1.06c-.39.39-.39 1.03 0 1.41s1.03.39 1.41 0l1.06-1.06zM7.05 18.36a.996.996 0 0 0 0-1.41.996.996 0 0 0 0-1.41l-1.06 1.06c-.39.39-.39 1.03 0 1.41s1.03.39 1.41 0l1.06-1.06z"/>
+                </svg>
+            </button>
         </div>
     </header>
 
-    <main>
-        <!-- Главный экран (Hero) -->
-        <section class="hero">
-            <div class="container hero-container">
-                <div class="hero-content">
-                    <span class="greeting">Привет, меня зовут</span>
-                    <h1 class="hero-title">Глеб</h1>
-                    <div class="typewriter-container">
-                        <span id="typewriter" class="typewriter-text"></span>
-                        <span class="cursor">|</span>
-                    </div>
-                    <div class="hero-btns">
-                        <a href="#projects" class="btn btn-primary">Мои проекты</a>
-                        <a href="#contacts" class="btn btn-secondary">Связаться</a>
-                    </div>
-                </div>
-                <div class="hero-avatar">
-                    <img src="image.png" alt="Глеб — разработчик" class="avatar-img">
+    <!-- ГЛАВНЫЙ ЭКРАН (HERO) -->
+    <section class="hero">
+        <div class="container hero-content">
+            <div class="hero-text">
+                <span class="badge">Frontend-разработчик</span>
+                <h1>Привет, я <span class="highlight">Глеб</span></h1>
+                <p id="typewriter" class="typewriter-text"></p>
+                <div class="hero-btns">
+                    <a href="#projects" class="btn btn-primary">Мои проекты</a>
+                    <a href="#contacts" class="btn btn-outline">Связаться со мной</a>
                 </div>
             </div>
-        </section>
+            <div class="hero-image">
+                <img src="avatar.jpg" alt="Глеб — Frontend-разработчик" class="avatar-img" width="300" height="300">
+            </div>
+        </div>
+    </section>
 
-        <!-- Секция: Обо мне -->
+    <main class="container">
+        
+        <!-- СЕКЦИЯ: ОБО МНЕ -->
         <section id="about" class="section">
-            <div class="container">
-                <h2 class="section-title">Обо мне</h2>
-                <div class="card about-card">
-                    <p>Я начинающий веб-разработчик, увлеченный созданием удобных, быстрых и современных сайтов. Мне нравится превращать идеи в работающий код и постоянно развивать свои навыки.</p>
-                    <p>Каждый день я изучаю новые технологии, пишу чистый код и практикуюсь в верстке адаптивных интерфейсов, которые одинаково красиво выглядят на любых устройствах.</p>
-                </div>
+            <h2 class="section-title">Обо мне</h2>
+            <div class="card">
+                <p>Меня зовут Глеб. Я фронтенд-разработчик из Беларуси. Создаю чистые, адаптивные и интерактивные веб-интерфейсы с акцентом на скорость работы и удобство пользователя.</p>
+                <p>В работе использую современный стек HTML5, CSS3 и чистый JavaScript (ES6+). Готов помочь с версткой лендингов, разработкой функциональных веб-приложений или доработкой существующих проектов.</p>
             </div>
         </section>
 
-        <!-- Секция: Навыки -->
+        <!-- СЕКЦИЯ: НАВЫКИ -->
         <section id="skills" class="section">
-            <div class="container">
-                <h2 class="section-title">Мой стек</h2>
-                <div class="skills-grid">
-                    <div class="skill-card">
-                        <div class="skill-icon">🌐</div>
-                        <h3>HTML5 &amp; CSS3</h3>
-                        <p>Семантическая и валидная верстка, Flexbox, Grid, адаптивность для любых экранов.</p>
+            <h2 class="section-title">Навыки и стек</h2>
+            <div class="skills-grid">
+                
+                <div class="skill-card">
+                    <div class="skill-icon html">
+                        <svg viewBox="0 0 24 24" width="28" height="28" fill="currentColor">
+                            <path d="M12 2L3 5l1.6 15.2L12 22l7.4-1.8L21 5 12 2zm6.2 16.7L12 20.3l-6.2-1.6L4.6 7h14.8l-1.2 11.7z"/>
+                        </svg>
                     </div>
-                    <div class="skill-card">
-                        <div class="skill-icon">⚡</div>
-                        <h3>JavaScript</h3>
-                        <p>Интерактивные элементы интерфейса, работа с DOM, события, работа с LocalStorage.</p>
-                    </div>
-                    <div class="skill-card">
-                        <div class="skill-icon">🛠️</div>
-                        <h3>Инструменты</h3>
-                        <p>Git, GitHub, VS Code, Figma (экспорт макетов и адаптация дизайна).</p>
-                    </div>
+                    <h3>HTML5</h3>
+                    <p>Семантическая и валидная разметка, доступность, правильная структура документа.</p>
                 </div>
+
+                <div class="skill-card">
+                    <div class="skill-icon css">
+                        <svg viewBox="0 0 24 24" width="28" height="28" fill="currentColor">
+                            <path d="M12 2L3 5l1.6 15.2L12 22l7.4-1.8L21 5 12 2zm0 18.3l-5.9-1.5L4.9 8h14.2l-1.2 10.8-5.9 1.5z"/>
+                        </svg>
+                    </div>
+                    <h3>CSS3 & Flexbox/Grid</h3>
+                    <p>Адаптивная верстка, анимации, CSS-переменные, аккуратная верстка без переполнения.</p>
+                </div>
+
+                <div class="skill-card">
+                    <div class="skill-icon js">
+                        <svg viewBox="0 0 24 24" width="28" height="28" fill="currentColor">
+                            <path d="M3 3h18v18H3V3zm14.5 12.8c0-1.6-.9-2.5-2.8-3.2l-.7-.3c-1-.4-1.4-.7-1.4-1.3 0-.6.5-1 1.3-1 .8 0 1.3.3 1.7.9l1.4-1c-.7-1.1-1.7-1.6-3.1-1.6-1.8 0-3.1 1.1-3.1 2.7 0 1.5.9 2.4 2.6 3l.7.3c1.1.4 1.6.8 1.6 1.4 0 .7-.6 1.2-1.5 1.2-1.1 0-1.8-.5-2.3-1.4l-1.4 1c.8 1.4 2 2.1 3.7 2.1 2.1 0 3.2-1.2 3.2-2.8zm-7.3-6.5h-1.8v5.5c0 1.2-.5 1.7-1.5 1.7-.6 0-1.1-.2-1.5-.6l-.9 1.2c.7.8 1.6 1.1 2.6 1.1 2 0 3.1-1.1 3.1-3.4V9.3z"/>
+                        </svg>
+                    </div>
+                    <h3>JavaScript (ES6+)</h3>
+                    <p>Работа с DOM, асинхронные запросы (Fetch API, Async/Await), события и LocalStorage.</p>
+                </div>
+
+                <div class="skill-card">
+                    <div class="skill-icon git">
+                        <svg viewBox="0 0 24 24" width="28" height="28" fill="currentColor">
+                            <path d="M21.6 10.9L13.1 2.4c-.6-.6-1.5-.6-2.1 0L9.4 4 12 6.6c.6-.2 1.3-.1 1.8.4.5.5.6 1.2.4 1.8l2.5 2.5c.6-.2 1.3-.1 1.8.4.7.7.7 1.9 0 2.6-.7.7-1.9.7-2.6 0-.5-.5-.6-1.2-.4-1.8L13 10v4.6c.2.1.4.3.5.5.7.7.7 1.9 0 2.6-.7.7-1.9.7-2.6 0-.7-.7-.7-1.9 0-2.6.2-.2.4-.4.6-.5V9.9c.2-.1.4-.3.6-.5.2-.2.4-.4.5-.6L9.6 5.8 2.4 13c-.6.6-.6 1.5 0 2.1l8.5 8.5c.6.6 1.5.6 2.1 0l8.6-8.6c.6-.6.6-1.5 0-2.1z"/>
+                        </svg>
+                    </div>
+                    <h3>Git & GitHub</h3>
+                    <p>Контроль версий, деплой проектов на GitHub Pages, ведение чистых репозиториев.</p>
+                </div>
+
             </div>
         </section>
 
-        <!-- Секция: Проекты -->
+        <!-- СЕКЦИЯ: ПРОЕКТЫ -->
         <section id="projects" class="section">
-            <div class="container">
-                <h2 class="section-title">Проекты</h2>
-                <div class="projects-grid">
-                    <div class="project-card">
-                        <div class="project-info">
-                            <h3>Генератор паролей</h3>
-                            <p>Удобный интерактивный генератор надежных паролей с настройкой длины, символов и индикатором сложности.</p>
-                            <div class="tech-stack">
-                                <span class="tag">HTML5</span>
-                                <span class="tag">CSS3</span>
-                                <span class="tag">JavaScript</span>
-                            </div>
+            <h2 class="section-title">Мои проекты</h2>
+            <div class="projects-grid">
+                
+                <!-- Проект 1: Генератор паролей -->
+                <div class="project-card">
+                    <div class="project-content">
+                        <h3>Генератор паролей</h3>
+                        <p>Интерактивное приложение для создания надежных паролей с настройкой длины, типов символов, копированием в буфер обмена и шкалой сложности.</p>
+                        
+                        <div class="tech-stack">
+                            <span class="tech-badge">HTML5</span>
+                            <span class="tech-badge">CSS3</span>
+                            <span class="tech-badge">JavaScript DOM</span>
+                            <span class="tech-badge">Clipboard API</span>
                         </div>
-                        <a href="generator/index.html" class="project-btn">Открыть проект &rarr;</a>
                     </div>
-                    <div class="project-card">
-                        <div class="project-info">
-                            <h3>Портфолио</h3>
-                            <p>Персональный сайт-визитка с переключением светлой и темной темы, плавной анимацией и мобильной адаптацией.</p>
-                            <div class="tech-stack">
-                                <span class="tag">HTML5</span>
-                                <span class="tag">CSS3</span>
-                                <span class="tag">JavaScript</span>
-                            </div>
+                    
+                    <a href="generator/index.html" class="project-btn">
+                        <span>Открыть проект</span>
+                        <svg viewBox="0 0 24 24" width="18" height="18" fill="none">
+                            <path d="M5 12h14M12 5l7 7-7 7" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                        </svg>
+                    </a>
+                </div>
+
+                <!-- Проект 2: Трекер задач -->
+                <div class="project-card">
+                    <div class="project-content">
+                        <h3>Task Tracker & ToDo</h3>
+                        <p>Удобный менеджер задач с возможностью фильтрации по статусам (все/активные/завершенные), счетчиком и автосохранением в LocalStorage.</p>
+                        
+                        <div class="tech-stack">
+                            <span class="tech-badge">JavaScript ES6</span>
+                            <span class="tech-badge">LocalStorage</span>
+                            <span class="tech-badge">UI/UX State</span>
                         </div>
-                        <a href="#about" class="project-btn">Вы здесь</a>
                     </div>
+                    
+                    <a href="todo/index.html" class="project-btn">
+                        <span>Открыть проект</span>
+                        <svg viewBox="0 0 24 24" width="18" height="18" fill="none">
+                            <path d="M5 12h14M12 5l7 7-7 7" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                        </svg>
+                    </a>
+                </div>
+
+                <!-- Проект 3: Конвертер валют -->
+                <div class="project-card">
+                    <div class="project-content">
+                        <h3>Конвертер валют</h3>
+                        <p>Онлайн-калькулятор валют с мгновенным пересчетом курсов (USD, EUR, BYN, RUB, PLN) в реальном времени через открытый REST API.</p>
+                        
+                        <div class="tech-stack">
+                            <span class="tech-badge">Async / Await</span>
+                            <span class="tech-badge">Fetch API</span>
+                            <span class="tech-badge">REST Service</span>
+                        </div>
+                    </div>
+                    
+                    <a href="converter/index.html" class="project-btn">
+                        <span>Открыть проект</span>
+                        <svg viewBox="0 0 24 24" width="18" height="18" fill="none">
+                            <path d="M5 12h14M12 5l7 7-7 7" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                        </svg>
+                    </a>
+                </div>
+
+            </div>
+        </section>
+
+        <!-- СЕКЦИЯ: КОНТАКТЫ -->
+        <section id="contacts" class="section">
+            <h2 class="section-title">Контакты</h2>
+            <div class="card text-center">
+                <p class="contacts-desc">Открыт к предложениям о сотрудничестве, стажировкам и интересным проектам. Напишите мне!</p>
+                <div class="social-links">
+                    <a href="https://t.me/Gleb_auto" target="_blank" rel="noopener noreferrer" class="social-btn tg" title="Написать в Telegram">
+                        <svg viewBox="0 0 24 24" width="26" height="26" fill="currentColor">
+                            <path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm4.64 6.8c-.15 1.58-.8 5.42-1.13 7.19-.14.75-.42 1-.68 1.03-.58.05-1.02-.38-1.58-.75-.88-.58-1.38-.94-2.23-1.5-.99-.65-.35-1.01.22-1.59.15-.15 2.71-2.48 2.76-2.69a.2.2 0 0 0-.05-.18c-.06-.05-.14-.03-.21-.02-.09.02-1.49.95-4.22 2.79-.4.27-.76.41-1.08.4-.36-.01-1.04-.2-1.55-.37-.63-.2-1.12-.31-1.08-.66.02-.18.27-.36.75-.55 2.92-1.27 4.86-2.11 5.83-2.51 2.78-1.16 3.35-1.36 3.73-1.36.08 0 .27.02.39.12.1.08.13.19.14.27-.01.06.01.24 0 .38z"/>
+                        </svg>
+                    </a>
+                    
+                    <a href="mailto:dev.autolocked@gmail.com" class="social-btn email" title="Написать на Email">
+                        <svg viewBox="0 0 24 24" width="26" height="26" fill="currentColor">
+                            <path d="M20 4H4c-1.1 0-1.99.9-1.99 2L2 18c0 1.1.9 2 2 2h16c1.1 0 2-.9 2-2V6c0-1.1-.9-2-2-2zm0 4l-8 5-8-5V6l8 5 8-5v2z"/>
+                        </svg>
+                    </a>
                 </div>
             </div>
         </section>
 
-        <!-- Секция: Контакты -->
-        <section id="contacts" class="section">
-            <div class="container">
-                <h2 class="section-title">Контакты</h2>
-                <div class="card contacts-card">
-                    <p>Всегда открыт для новых предложений, совместных проектов и интересного сотрудничества!</p>
-                    <div class="social-links">
-                        <a href="https://t.me/glebdev" target="_blank" rel="noopener noreferrer" class="social-btn tg" title="Telegram">
-                            <svg viewBox="0 0 24 24" width="28" height="28" fill="currentColor">
-                                <path d="M9.78 18.65l.28-4.23 7.68-6.92c.34-.31-.07-.46-.52-.19L7.74 13.3 3.64 12c-.88-.25-.89-.86.2-1.3l15.97-6.16c.73-.33 1.43.18 1.15 1.3l-2.72 12.81c-.19.91-.74 1.13-1.5 1.13-.77 0-1.04-.42-1.74-.9l-3.22 2.77z"/>
-                            </svg>
-                        </a>
-                        <a href="mailto:dev.autolocked@gmail.com" class="social-btn email" title="Написать на Email">
-                            <svg viewBox="0 0 24 24" width="28" height="28" fill="currentColor">
-                                <path d="M20 4H4c-1.1 0-1.99.9-1.99 2L2 18c0 1.1.9 2 2 2h16c1.1 0 2-.9 2-2V6c0-1.1-.9-2-2-2zm0 4l-8 5-8-5V6l8 5 8-5v2z"/>
-                            </svg>
-                        </a>
-                    </div>
-                </div>
-            </div>
-        </section>
     </main>
 
-    <!-- Подвал -->
+    <!-- ПОДВАЛ -->
     <footer>
         <div class="container">
-            <p>Создано с душой и чистым кодом &copy; 2026 Глеб</p>
+            <p>Написано на чистом JS & CSS ⚡ autolocked.dev © 2026</p>
         </div>
     </footer>
 
-    <!-- Кнопка наверх -->
-    <button id="scrollTopBtn" class="scroll-top" title="Наверх">
+    <!-- КНОПКА «НАВЕРХ» -->
+    <button id="scrollTopBtn" class="scroll-top" title="Наверх" aria-label="Наверх">
         <svg viewBox="0 0 24 24" width="24" height="24" fill="currentColor">
             <path d="M4 12l1.41 1.41L11 7.83V20h2V7.83l5.58 5.59L20 12l-8-8-8 8z"/>
         </svg>
     </button>
 
-    <!-- JavaScript -->
+    <!-- СКРИПТЫ СТРАНИЦЫ -->
     <script>
         document.addEventListener('DOMContentLoaded', () => {
+
             // 1. ТЕМА (DARK / LIGHT)
             const themeToggleBtn = document.getElementById('theme-toggle');
             const moonIcon = document.getElementById('moon-icon');
             const sunIcon = document.getElementById('sun-icon');
             const htmlElement = document.documentElement;
 
-            function updateThemeIcons(theme) {
-                if (theme === 'dark') {
-                    if (moonIcon) moonIcon.style.display = 'none';
-                    if (sunIcon) sunIcon.style.display = 'block';
-                } else {
-                    if (moonIcon) moonIcon.style.display = 'block';
-                    if (sunIcon) sunIcon.style.display = 'none';
-                }
-            }
-
             const savedTheme = localStorage.getItem('theme');
             if (savedTheme === 'dark') {
                 htmlElement.setAttribute('data-theme', 'dark');
-                updateThemeIcons('dark');
-            } else {
-                htmlElement.removeAttribute('data-theme');
-                updateThemeIcons('light');
+                if (moonIcon) moonIcon.style.display = 'none';
+                if (sunIcon) sunIcon.style.display = 'block';
             }
 
             if (themeToggleBtn) {
@@ -197,57 +243,49 @@
                     if (currentTheme === 'dark') {
                         htmlElement.removeAttribute('data-theme');
                         localStorage.setItem('theme', 'light');
-                        updateThemeIcons('light');
+                        if (moonIcon) moonIcon.style.display = 'block';
+                        if (sunIcon) sunIcon.style.display = 'none';
                     } else {
                         htmlElement.setAttribute('data-theme', 'dark');
                         localStorage.setItem('theme', 'dark');
-                        updateThemeIcons('dark');
+                        if (moonIcon) moonIcon.style.display = 'none';
+                        if (sunIcon) sunIcon.style.display = 'block';
                     }
                 });
             }
 
             // 2. ЭФФЕКТ ПЕЧАТНОЙ МАШИНКИ
-            const words = ["Frontend-разработчик", "Создаю стильные сайты", "Пишу чистый код"];
-            let wordIndex = 0;
-            let charIndex = 0;
-            let isDeleting = false;
             const typewriterElement = document.getElementById('typewriter');
+            const textToType = 'Создаю современные, быстрые и отзывчивые веб-сайты.';
+            let charIndex = 0;
 
-            function typeEffect() {
-                if (!typewriterElement) return;
-                const currentWord = words[wordIndex];
-
-                if (isDeleting) {
-                    typewriterElement.textContent = currentWord.substring(0, charIndex - 1);
-                    charIndex--;
-                } else {
-                    typewriterElement.textContent = currentWord.substring(0, charIndex + 1);
+            function typeWriter() {
+                if (typewriterElement && charIndex < textToType.length) {
+                    typewriterElement.textContent += textToType.charAt(charIndex);
                     charIndex++;
+                    setTimeout(typeWriter, 35);
                 }
-
-                let speed = isDeleting ? 40 : 90;
-
-                if (!isDeleting && charIndex === currentWord.length) {
-                    speed = 2000;
-                    isDeleting = true;
-                } else if (isDeleting && charIndex === 0) {
-                    isDeleting = false;
-                    wordIndex = (wordIndex + 1) % words.length;
-                    speed = 400;
-                }
-
-                setTimeout(typeEffect, speed);
             }
-            typeEffect();
 
-            // 3. КНОПКА СКРОЛЛА НАВЕРХ
+            if (typewriterElement) {
+                setTimeout(typeWriter, 400);
+            }
+
+            // 3. КНОПКА «НАВЕРХ» И ТЕНЬ ШАПКИ
+            const header = document.getElementById('header');
             const scrollTopBtn = document.getElementById('scrollTopBtn');
+
             window.addEventListener('scroll', () => {
-                if (!scrollTopBtn) return;
-                if (window.scrollY > 300) {
-                    scrollTopBtn.classList.add('visible');
+                if (window.scrollY > 40) {
+                    header.classList.add('scrolled');
                 } else {
-                    scrollTopBtn.classList.remove('visible');
+                    header.classList.remove('scrolled');
+                }
+
+                if (window.scrollY > 350) {
+                    scrollTopBtn.classList.add('show');
+                } else {
+                    scrollTopBtn.classList.remove('show');
                 }
             });
 
@@ -257,23 +295,17 @@
                 });
             }
 
-            // 4. ПЛАВНОЕ ПОЯВЛЕНИЕ ПРИ СКРОЛЛЕ
+            // 4. ПЛАВНОЕ ПОЯВЛЕНИЕ СЕКЦИЙ
             const sections = document.querySelectorAll('.section');
-            const observerOptions = { root: null, rootMargin: '0px', threshold: 0.1 };
-
-            const observer = new IntersectionObserver((entries, obs) => {
+            const observer = new IntersectionObserver((entries) => {
                 entries.forEach(entry => {
                     if (entry.isIntersecting) {
-                        entry.target.classList.add('active');
-                        obs.unobserve(entry.target);
+                        entry.target.classList.add('section-visible');
                     }
                 });
-            }, observerOptions);
+            }, { threshold: 0.12 });
 
-            sections.forEach(sec => {
-                sec.classList.add('reveal');
-                observer.observe(sec);
-            });
+            sections.forEach(sec => observer.observe(sec));
         });
     </script>
 </body>
