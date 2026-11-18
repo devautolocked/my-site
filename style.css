@@ -1,4 +1,4 @@
-/* --- ПЕРЕМЕННЫЕ ДЛЯ СВЕТЛОЙ ТЕМЫ (по умолчанию) --- */
+/* --- ПЕРЕМЕННЫЕ ДЛЯ СВЕТЛОЙ ТЕМЫ --- */
 :root {
     --bg-color: #f4f7f6;
     --text-color: #2d3436;
@@ -10,7 +10,7 @@
 }
 
 /* --- ПЕРЕМЕННЫЕ ДЛЯ ТЕМНОЙ ТЕМЫ --- */
-[data-theme="dark"] {
+html[data-theme="dark"] {
     --bg-color: #121212;
     --text-color: #e0e0e0;
     --primary-color: #4fc3f7;
@@ -25,7 +25,6 @@
     padding: 0;
     box-sizing: border-box;
     font-family: 'Montserrat', sans-serif;
-    transition: background-color 0.3s ease, color 0.3s ease; /* Плавная смена темы */
 }
 
 html {
@@ -37,6 +36,7 @@ body {
     color: var(--text-color);
     line-height: 1.7;
     overflow-x: hidden;
+    transition: background-color 0.3s, color 0.3s;
 }
 
 .container {
@@ -54,6 +54,7 @@ header {
     backdrop-filter: blur(10px);
     z-index: 1000;
     box-shadow: 0 2px 15px rgba(0,0,0,0.05);
+    transition: background-color 0.3s;
 }
 
 .header-container {
@@ -94,6 +95,7 @@ nav a:hover {
 .theme-btn {
     background: none;
     border: none;
+    outline: none;
     cursor: pointer;
     color: var(--text-color);
     display: flex;
@@ -116,6 +118,7 @@ nav a:hover {
     align-items: center;
     padding-top: 70px;
     background: linear-gradient(135deg, var(--bg-color) 0%, var(--card-bg) 100%);
+    transition: background 0.3s;
 }
 
 .hero-content {
@@ -147,7 +150,7 @@ nav a:hover {
     color: var(--text-muted);
     margin-bottom: 30px;
     max-width: 500px;
-    min-height: 60px; /* Чтобы текст не прыгал при печати */
+    min-height: 60px; 
 }
 
 .typewriter-text::after {
@@ -226,6 +229,7 @@ nav a:hover {
     padding: 40px;
     border-radius: 25px;
     box-shadow: var(--shadow);
+    transition: background-color 0.3s;
 }
 
 .card p {
@@ -324,6 +328,7 @@ footer {
     margin-top: 50px;
     font-size: 16px;
     border-top: 1px solid rgba(128, 128, 128, 0.1);
+    transition: background-color 0.3s;
 }
 
 /* Кнопка "Наверх" */
