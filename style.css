@@ -129,18 +129,18 @@ nav a:hover {
     box-shadow: 0 12px 30px rgba(0, 119, 255, 0.4);
 }
 
-/* Аватарка с твоим фото */
+/* Аватарка (жестко фиксируем размер на ПК) */
 .avatar-img {
-    width: 320px;
-    height: 320px;
+    width: 320px !important;
+    height: 320px !important;
+    max-width: 100%;
     object-fit: cover;
-    border-radius: 50%;
+    border-radius: 50% !important;
     border: 6px solid #ffffff;
     box-shadow: 0 20px 40px rgba(0, 119, 255, 0.2);
     animation: float 6s ease-in-out infinite;
 }
 
-/* Плавное парение аватарки */
 @keyframes float {
     0% { transform: translateY(0px); }
     50% { transform: translateY(-15px); }
@@ -245,9 +245,10 @@ nav a:hover {
     transition: transform 0.3s, box-shadow 0.3s;
 }
 
+/* Жестко фиксируем размер иконок */
 .social-btn svg {
-    width: 28px;
-    height: 28px;
+    width: 28px !important;
+    height: 28px !important;
 }
 
 .social-btn.tg {
@@ -295,11 +296,11 @@ footer {
 }
 
 /* =========================================
-   МИНИМАЛИЗМ ДЛЯ ТЕЛЕФОНОВ
+   МИНИМАЛИЗМ ДЛЯ ТЕЛЕФОНОВ (Оставляем как было)
    ========================================= */
 @media (max-width: 900px) {
     .hero-content {
-        flex-direction: column-reverse; /* Фото сверху, текст снизу */
+        flex-direction: column-reverse;
         text-align: center;
         padding-top: 110px;
         gap: 20px;
@@ -307,19 +308,18 @@ footer {
     .hero-text h1 { font-size: 42px; }
     .hero-text p { margin: 0 auto 30px; }
     .avatar-img {
-        width: 220px;
-        height: 220px;
+        width: 220px !important;
+        height: 220px !important;
     }
 }
 
 @media (max-width: 600px) {
-    /* Убираем лишнее, делаем строго и красиво */
     .hero { padding-top: 90px; min-height: auto; padding-bottom: 40px; }
     .hero-text h1 { font-size: 32px; }
     .hero-text p { font-size: 15px; }
-    .avatar-img { width: 180px; height: 180px; }
+    .avatar-img { width: 180px !important; height: 180px !important; }
     
-    nav { display: none; } /* Скрываем меню для мобилок */
+    nav { display: none; }
     
     .section { padding: 50px 0; }
     .section-title { font-size: 26px; margin-bottom: 25px; }
@@ -332,5 +332,4 @@ footer {
     .project-card h3 { font-size: 20px; }
     
     .social-btn { width: 55px; height: 55px; }
-    .social-btn svg { width: 24px; height: 24px; }
 }
