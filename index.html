@@ -2,47 +2,87 @@
 <html lang="ru">
 <head>
     <meta charset="UTF-8">
-    <title>Глеб — начинающий веб-разработчик</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Глеб — Начинающий веб-разработчик</title>
     <link rel="stylesheet" href="style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;800&display=swap" rel="stylesheet">
 </head>
 <body>
 
-    <header>
-        <div class="logo">gleb.dev</div>
-        <nav>
-            <a href="#about">Обо мне</a>
-            <a href="#projects">Проекты</a>
-            <a href="#contacts">Контакты</a>
-        </nav>
+    <header id="header">
+        <div class="container header-container">
+            <div class="logo">gleb<span>.dev</span></div>
+            <nav>
+                <a href="#about">Обо мне</a>
+                <a href="#projects">Проекты</a>
+                <a href="#contacts">Контакты</a>
+            </nav>
+        </div>
     </header>
 
-    <main>
-        <!-- Блок с приветствием и аватаркой -->
-        <div class="hero">
-            <img src="avatar.jpg" alt="Моё фото" class="avatar">
+    <section class="hero">
+        <div class="container hero-content">
             <div class="hero-text">
-                <h1>Привет, я Глеб</h1>
-                <p>Начинающий веб-разработчик. Учусь делать сайты и готов помочь с вашим проектом.</p>
+                <h1>Привет, я <span class="highlight">Глеб</span></h1>
+                <p>Создаю современные и удобные сайты. Учусь веб-разработке и готов помочь с вашим проектом.</p>
+                <a href="#contacts" class="btn">Связаться со мной</a>
+            </div>
+            <div class="hero-image">
+                <div class="avatar-placeholder">G</div>
             </div>
         </div>
+    </section>
 
-        <!-- Карточки -->
-        <section id="about" class="card">
-            <h2>Обо мне</h2>
-            <p>Меня зовут Глеб. Я начинающий веб-разработчик из Беларуси. Учусь делать сайты с нуля и уже умею верстать простые страницы. Готов помочь с вашим проектом — недорого и с душой.</p>
+    <main class="container">
+        
+        <section id="about" class="section">
+            <h2 class="section-title">Обо мне</h2>
+            <div class="card">
+                <p>Меня зовут Глеб. Я начинающий веб-разработчик из Беларуси. Изучаю современные технологии, чтобы создавать быстрые и красивые сайты. В своей работе использую HTML, CSS и JavaScript.</p>
+                <p>Готов помочь с версткой сайта, созданием лендинга или доработкой существующего проекта.</p>
+            </div>
         </section>
 
-        <section id="projects" class="card">
-            <h2>Проекты</h2>
-            <p>Пока здесь пусто, но скоро появятся мои первые работы. Этот сайт — уже первый проект!</p>
+        <section id="projects" class="section">
+            <h2 class="section-title">Мои проекты</h2>
+            <div class="projects-grid">
+                <div class="project-card">
+                    <h3>Сайт-визитка</h3>
+                    <p>Мой первый проект. Создан для демонстрации навыков верстки и работы с JavaScript.</p>
+                    <span class="tag">HTML/CSS/JS</span>
+                </div>
+                <div class="project-card">
+                    <h3>Второй проект</h3>
+                    <p>Скоро здесь появится калькулятор или игра. Сейчас я активно учусь и работаю над этим.</p>
+                    <span class="tag">В разработке</span>
+                </div>
+            </div>
         </section>
 
-        <section id="contacts" class="card">
-            <h2>Контакты</h2>
-            <p>Telegram: <a href="https://t.me/autolocked">@autolocked</a></p>
-            <p>Email: <a href="mailto:dev.autolocked@gmail.com">dev.autolocked@gmail.com</a></p>
+        <section id="contacts" class="section">
+            <h2 class="section-title">Контакты</h2>
+            <div class="card contact-card">
+                <p>Хотите заказать сайт или задать вопрос? Напишите мне!</p>
+                <div class="contact-links">
+                    <div class="contact-item">
+                        <span>Telegram:</span> <a href="https://t.me/autolocked" id="tg-link" target="_blank">@autolocked</a>
+                        <button id="copy-btn" class="copy-btn" title="Скопировать ник">📋</button>
+                    </div>
+                    <div class="contact-item">
+                        <span>Email:</span> <a href="mailto:dev.autolocked@gmail.com">dev.autolocked@gmail.com</a>
+                    </div>
+                </div>
+            </div>
         </section>
+
     </main>
 
+    <footer>
+        <div class="container">
+            <p>&copy; 2026 Глеб. Сделано с нуля на чистом коде.</p>
+        </div>
+    </footer>
+
+    <script src="script.js"></script>
 </body>
 </html>
