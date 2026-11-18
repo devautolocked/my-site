@@ -1,41 +1,4 @@
-// 1. Копирование Telegram
-const copyBtn = document.getElementById('copy-btn');
-const tgLink = document.getElementById('tg-link');
-
-if (copyBtn && tgLink) {
-    copyBtn.addEventListener('click', () => {
-        const textToCopy = tgLink.innerText;
-        
-        // Используем fallback, если clipboard API недоступен (например, на старых телефонах)
-        if (navigator.clipboard) {
-            navigator.clipboard.writeText(textToCopy).then(() => {
-                showCopySuccess();
-            }).catch(err => {
-                console.error('Ошибка копирования: ', err);
-            });
-        } else {
-            // Старый метод
-            const textArea = document.createElement("textarea");
-            textArea.value = textToCopy;
-            document.body.appendChild(textArea);
-            textArea.select();
-            document.execCommand('copy');
-            document.body.removeChild(textArea);
-            showCopySuccess();
-        }
-    });
-}
-
-function showCopySuccess() {
-    copyBtn.innerText = '✅';
-    copyBtn.classList.add('copied');
-    setTimeout(() => {
-        copyBtn.innerText = '📋';
-        copyBtn.classList.remove('copied');
-    }, 2000);
-}
-
-// 2. Тень шапки при скролле
+// 1. Тень шапки при скролле
 const header = document.getElementById('header');
 window.addEventListener('scroll', () => {
     if (window.scrollY > 50) {
@@ -45,7 +8,7 @@ window.addEventListener('scroll', () => {
     }
 });
 
-// 3. Красивое появление блоков при скролле
+// 2. Красивое появление блоков при скролле
 const sections = document.querySelectorAll('.section');
 
 const observerOptions = {

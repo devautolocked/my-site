@@ -1,4 +1,3 @@
-/* Базовые переменные */
 :root {
     --bg-color: #f4f7f6;
     --text-color: #2d3436;
@@ -130,26 +129,22 @@ nav a:hover {
     box-shadow: 0 12px 30px rgba(0, 119, 255, 0.4);
 }
 
-.avatar-placeholder {
+/* Аватарка с твоим фото */
+.avatar-img {
     width: 320px;
     height: 320px;
-    background: linear-gradient(135deg, var(--primary-color), #00d2ff);
-    border-radius: 30% 70% 70% 30% / 30% 30% 70% 70%;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    font-size: 140px;
-    color: white;
-    font-weight: 800;
-    box-shadow: 0 25px 50px rgba(0, 119, 255, 0.25);
-    animation: morph 8s ease-in-out infinite;
-    flex-shrink: 0;
+    object-fit: cover;
+    border-radius: 50%;
+    border: 6px solid #ffffff;
+    box-shadow: 0 20px 40px rgba(0, 119, 255, 0.2);
+    animation: float 6s ease-in-out infinite;
 }
 
-@keyframes morph {
-    0% { border-radius: 30% 70% 70% 30% / 30% 30% 70% 70%; }
-    50% { border-radius: 70% 30% 30% 70% / 70% 70% 30% 30%; }
-    100% { border-radius: 30% 70% 70% 30% / 30% 30% 70% 70%; }
+/* Плавное парение аватарки */
+@keyframes float {
+    0% { transform: translateY(0px); }
+    50% { transform: translateY(-15px); }
+    100% { transform: translateY(0px); }
 }
 
 /* Секции */
@@ -232,54 +227,49 @@ nav a:hover {
     font-weight: 700;
 }
 
-/* Контакты */
-.contact-links {
-    margin-top: 25px;
+/* Контакты (Иконки) */
+.social-links {
     display: flex;
-    flex-direction: column;
     gap: 20px;
+    margin-top: 30px;
 }
 
-.contact-item {
-    font-size: 18px;
+.social-btn {
     display: flex;
     align-items: center;
-    flex-wrap: wrap;
-    gap: 10px;
-}
-
-.contact-item span {
-    font-weight: 600;
-    color: #2d3436;
-}
-
-.contact-item a {
-    color: var(--primary-color);
-    text-decoration: none;
-    font-weight: 700;
-}
-
-.contact-item a:hover {
-    text-decoration: underline;
-}
-
-.copy-btn {
-    background: #f4f7f6;
-    border: none;
-    border-radius: 10px;
-    padding: 10px 15px;
-    cursor: pointer;
-    font-size: 18px;
-    transition: all 0.3s;
-}
-
-.copy-btn:hover {
-    background: #e2e8f0;
-}
-
-.copy-btn.copied {
-    background: #22c55e;
+    justify-content: center;
+    width: 60px;
+    height: 60px;
+    border-radius: 50%;
     color: white;
+    transition: transform 0.3s, box-shadow 0.3s;
+}
+
+.social-btn svg {
+    width: 28px;
+    height: 28px;
+}
+
+.social-btn.tg {
+    background: #0088cc;
+    box-shadow: 0 8px 20px rgba(0, 136, 204, 0.3);
+}
+
+.social-btn.email {
+    background: #ea4335;
+    box-shadow: 0 8px 20px rgba(234, 67, 53, 0.3);
+}
+
+.social-btn:hover {
+    transform: translateY(-5px) scale(1.05);
+}
+
+.social-btn.tg:hover {
+    box-shadow: 0 12px 25px rgba(0, 136, 204, 0.5);
+}
+
+.social-btn.email:hover {
+    box-shadow: 0 12px 25px rgba(234, 67, 53, 0.5);
 }
 
 /* Подвал */
@@ -305,56 +295,42 @@ footer {
 }
 
 /* =========================================
-   АДАПТИВНОСТЬ ДЛЯ ТЕЛЕФОНОВ (чтоб было красиво)
+   МИНИМАЛИЗМ ДЛЯ ТЕЛЕФОНОВ
    ========================================= */
 @media (max-width: 900px) {
     .hero-content {
-        flex-direction: column;
+        flex-direction: column-reverse; /* Фото сверху, текст снизу */
         text-align: center;
-        padding-top: 100px;
+        padding-top: 110px;
+        gap: 20px;
     }
     .hero-text h1 { font-size: 42px; }
     .hero-text p { margin: 0 auto 30px; }
-    .avatar-placeholder {
-        width: 250px;
-        height: 250px;
-        font-size: 100px;
-        margin-top: 30px;
+    .avatar-img {
+        width: 220px;
+        height: 220px;
     }
 }
 
 @media (max-width: 600px) {
-    /* На мобильных делаем отступы меньше */
-    .hero { padding-top: 90px; min-height: auto; padding-bottom: 60px; }
-    .hero-text h1 { font-size: 34px; }
-    .hero-text p { font-size: 16px; }
-    .avatar-placeholder {
-        width: 200px;
-        height: 200px;
-        font-size: 80px;
-    }
+    /* Убираем лишнее, делаем строго и красиво */
+    .hero { padding-top: 90px; min-height: auto; padding-bottom: 40px; }
+    .hero-text h1 { font-size: 32px; }
+    .hero-text p { font-size: 15px; }
+    .avatar-img { width: 180px; height: 180px; }
     
-    /* Скрываем меню в шапке, чтобы не мешало (для простоты) */
-    nav { display: none; }
+    nav { display: none; } /* Скрываем меню для мобилок */
     
-    .section { padding: 60px 0; }
-    .section-title { font-size: 28px; margin-bottom: 30px; }
+    .section { padding: 50px 0; }
+    .section-title { font-size: 26px; margin-bottom: 25px; }
+    .section-title::after { width: 50px; height: 4px; margin-top: 10px; }
     
-    .card { padding: 25px; }
-    .card p { font-size: 16px; }
+    .card { padding: 25px 20px; border-radius: 20px; }
+    .card p { font-size: 15px; }
     
-    .project-card { padding: 25px; }
+    .project-card { padding: 25px 20px; border-radius: 20px; }
     .project-card h3 { font-size: 20px; }
     
-    /* Контакты выстраиваем в столбик для удобства */
-    .contact-item {
-        flex-direction: column;
-        align-items: flex-start;
-        gap: 5px;
-        font-size: 16px;
-    }
-    .copy-btn {
-        margin-top: 10px;
-        width: 100%;
-    }
+    .social-btn { width: 55px; height: 55px; }
+    .social-btn svg { width: 24px; height: 24px; }
 }
